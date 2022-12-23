@@ -1,0 +1,72 @@
+# This File contains all Botnames which are used if you don't
+# specify a name using "addbot"
+# There must be at least 9 names in here and you're allowed a maximum
+# of 21 chars for the name ! Why ? The "[POD]" will be
+# placed before the Name and the Skill will be appended...
+#
+# Line below contains 21 chars as a marker for you
+#23456789012345678901
+#
+#
+Fragnatic
+DaTa
+Botman
+V0id
+Android
+M0rbid Desire
+Ping of Death
+Killing Frenzy
+Campers Death
+Count Floyd
+Polymorph
+Headshot Deluxe
+Trust Noone
+Borg Queen
+Make me Laugh
+Psyke
+Eliza
+Die Humans
+Alloc
+killaruna
+Electrica
+Ivan
+Laserdance
+S.E.S.
+L33t B0t
+U're Dead
+Violently Happy
+Make my Day
+Fuzzy Logic
+Pissed Off
+Neuromancer
+Neural Noise
+Dr. No
+#
+# 32 Names
+#
+Kugelfang
+Murder Inc.
+Bloodlust
+Pseudolukian
+Zap!
+Rambotnic
+Hemp Invader
+Dredd
+Botsie Collins
+BotsBlitz
+Funky Byte
+Berzerk Bot
+#
+[DD]Dumb
+@$3.1415rin
+Terran
+Whistler
+Pierre-Marie Baty
+elitejavi
+Rick
+Antony
+koraX
+eLiTe
+CoCoNUT
+sPlOrYgOn
+end

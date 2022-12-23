@@ -1,0 +1,131 @@
+"Phrases"
+{
+	"Killed1"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1}, you're no match for me!"
+	}
+	"Killed2"
+	{
+		"#format"	"{1:s}"
+		"en"		"Sorry, {1}. You got in my way."
+	}
+	"Killed3"
+	{
+		"#format"	"{1:s}"
+		"en"		"You flew back pretty good, {1}."
+	}
+	"Killed4"
+	{
+		"#format"	"{1:s}"
+		"en"		"I had to do it, {1}. You understand."
+	}
+	"Killed5"
+	{
+		"#format"	"{1:s}"
+		"en"		"You should've run while you had the chance, {1}."
+	}
+	"Killed6"
+	{
+		"#format"	"{1:s}"
+		"en"		"I've always been better, {1}. Always."
+	}
+	"Killed7"
+	{
+		"#format"	"{1:s}"
+		"en"		"I bet you hate it when that happens, don't you, {1}?"
+	}
+	"Killed8"
+	{
+		"#format"	"{1:s}"
+		"en"		"That'll teach you, {1}!"
+	}
+	"Killed9"
+	{
+		"#format"	"{1:s}"
+		"en"		"Hey, come on, {1}! You almost hurt me this time."
+	}
+	"Killed10"
+	{
+		"#format"	"{1:s}"
+		"en"		"Ha...ha!"
+	}
+	"Killed11"
+	{
+		"#format"	"{1:s}"
+		"en"		"You are nothing, {1}. Nothing at all."
+	}
+	"Killed12"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1}, I worry about you..."
+	}
+	"Killed13"
+	{
+		"#format"	"{1:s}"
+		"en"		"Sorry {1}, my Headshot Script is better than yours."
+	}
+	// Not in the original CS 1.3, just added this myself
+	"Killed14"
+	{
+		"#format"	"{1:s}"
+		"en"		"You need to do some practicing, {1}!"
+	}
+	// Dead chat
+	"Dead1"
+	{
+		"en"		"It makes me sick to look at those Fools!"
+	}
+	"Dead2"
+	{
+		"en"		"It's time for a mapchange, isn't it?"
+	}
+	"Dead3"
+	{
+		"en"		"I'm so booored!"
+	}
+	"Dead4"
+	{
+		"en"		"Spectating sucks..."
+	}
+	"Dead5"
+	{
+		"en"		"That looked painful."
+	}
+	"Dead6"
+	{
+		"en"		"This is quite fun."
+	}
+	"Dead7"
+	{
+		"en"		"Why does everyone keep trying to hurt me :)"
+	}
+	"Dead8"
+	{
+		"en"		"My handwrist already hurts..."
+	}
+	"Dead9"
+	{
+		"en"		"This Map sucks hard..."
+	}
+	"Dead10"
+	{
+		"en"		"I wish someone good would join the server."
+	}
+	"Dead11"
+	{
+		"en"		"I'm having a bad day."
+	}
+	"Dead12"
+	{
+		"en"		"I'm better at Quake 3, that's for sure!"
+	}
+	"Dead13"
+	{
+		"en"		"Botman must be such a cool guy..."
+	}
+	"Dead14"
+	{
+		"en"		"Stupid Bots!"
+	}
+}
