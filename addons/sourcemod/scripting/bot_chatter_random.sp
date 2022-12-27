@@ -126,50 +126,38 @@ public Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroadcast) 
         decl String:buffer[512];
         CreateTimer(10.0, TimerAnnounce, victimClient);
 
-        if (victimTeam != attackerTeam && randomNum >= 85) {
+        if (victimTeam != attackerTeam && randomNum >= 85 && IsFakeClient(attackerClient)) {
             if (randomChatToUse == 1) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed1", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 2) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed2", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 3) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed3", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 4) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed4", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 5) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed5", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 6) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed6", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 7) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed7", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 8) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed8", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 9) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed9", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 10) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed10", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 11) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed11", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 12) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed12", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 13) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed13", victimName);
-                FakeClientCommand(attackerClient, buffer);
             } else if (randomChatToUse == 14) {
                 Format(buffer, sizeof(buffer), "say %t", "Killed14", victimName);
-                FakeClientCommand(attackerClient, buffer);
             }
+
+            FakeClientCommand(attackerClient, buffer);
         }
     }
 }
