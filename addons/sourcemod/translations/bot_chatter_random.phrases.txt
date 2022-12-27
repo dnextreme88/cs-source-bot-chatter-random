@@ -71,6 +71,28 @@
 		"#format"	"{1:s}"
 		"en"		"You need to do some practicing, {1}!"
 	}
+	// Bomb planted chat
+	"BombPlant1"
+	{
+		"en"		"Jeeesuzzz Christ, not again!"
+	}
+	"BombPlant2"
+	{
+		"#format"	"{1:s}"
+		"en"		"C'mon {1}, let's search the bomb!"
+	}
+	"BombPlant3"
+	{
+		"en"		"Last time, it took me 5 secs to find & defuse it..."
+	}
+	"BombPlant4"
+	{
+		"en"		"Say, is it the red or the blue wire?"
+	}
+	"BombPlant5"
+	{
+		"en"		"...And my Heart goes boooom *grin*"
+	}
 	// Dead chat
 	"Dead1"
 	{

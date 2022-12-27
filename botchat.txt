@@ -27,10 +27,10 @@
 # Counter Messages for Bomb planted:
 # Minimum Number is 1
 #
-# NOT IMPLEMENTED
+# IMPLEMENTED 12/28/22
 [BOMBPLANT]
 Jeeesuzzz Christ, not again!
-Come on %t, let's search the bomb!
+C'mon %t, let's search the bomb!
 Last time it took me 5 secs to find & defuse it...
 Say, is it the red or the blue wire ?
 ...And my Heart goes boooom *grin*
@@ -60,6 +60,8 @@ Ha...ha!
 You are nothing, %v. Nothing at all.
 %v I worry about you...
 Sorry %v, my Headshot Script is better than yours.
+# Added on my own
+You need to do some practicing, %v!
 #
 #
 #

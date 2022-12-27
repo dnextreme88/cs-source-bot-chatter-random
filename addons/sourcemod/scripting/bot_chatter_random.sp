@@ -5,6 +5,9 @@
 #pragma semicolon 1
 
 #define PLUGIN_VERSION	"1.0"
+#define BOMBPLANT_MYSELF    "self"
+
+new aliveCtPlayers[17];
 
 public Plugin:myinfo = {
     name = "Bot Chatter",
@@ -17,7 +20,13 @@ public Plugin:myinfo = {
 public OnPluginStart() {
     LoadTranslations("bot_chatter_random.phrases");
 
+    HookEvent("round_start", Event_RoundStart);
     HookEvent("player_death", Event_PlayerDeath);
+    HookEvent("bomb_planted", Event_BombPlanted);
+}
+
+public Event_RoundStart(Handle:event, const String:name[], bool:dontBroadcast) {
+    aliveCtPlayers[0] = EOS;
 }
 
 // Announce the settings option after time set when timer created (default 10 secs)
@@ -101,6 +110,52 @@ public Action:TimerAnnounce(Handle:timer, any:client) {
             }
         }
     }
+}
+
+public Event_BombPlanted(Handle:event, const String:name[], bool:dontBroadcast) {
+    decl String:buffer[512];
+    int aliveCtPlayersCount = 0;
+
+    for (int i = 1; i <= MaxClients; i++) {
+        if (IsClientInGame(i)) {
+            new String:playerName[64];
+            GetClientName(i, playerName, 33);
+
+            if (IsPlayerAlive(i) && GetClientTeam(i) == 3 && IsFakeClient(i)) { // Alive CT bots only
+                aliveCtPlayers[aliveCtPlayersCount] = i;
+                aliveCtPlayersCount++;
+            }
+        }
+    }
+
+    int aliveCtPlayersSizeUsingIndex = aliveCtPlayersCount - 1;
+
+    // RANDOMIZER
+    new randomChatToUse = GetRandomInt(1, 5);
+    new randomCtPlayerIndex = GetRandomInt(0, aliveCtPlayersSizeUsingIndex);
+
+    if (randomChatToUse == 1) {
+        Format(buffer, sizeof(buffer), "say %t", "BombPlant1");
+    } else if (randomChatToUse == 2) {
+        // A random CT teammate
+        new randomCtPlayerIndexTeammate = GetRandomInt(0, aliveCtPlayersSizeUsingIndex);
+        new String:secondPlayerName[64];
+        GetClientName(aliveCtPlayers[randomCtPlayerIndexTeammate], secondPlayerName, 33);
+
+        if (randomCtPlayerIndex == randomCtPlayerIndexTeammate) {
+            Format(buffer, sizeof(buffer), "say %t", "BombPlant2", secondPlayerName);
+        } else {
+            Format(buffer, sizeof(buffer), "say %t", "BombPlant2", BOMBPLANT_MYSELF); // Let him talk to himself, for his own motivation
+        }
+    } else if (randomChatToUse == 3) {
+        Format(buffer, sizeof(buffer), "say %t", "BombPlant3");
+    } else if (randomChatToUse == 4) {
+        Format(buffer, sizeof(buffer), "say %t", "BombPlant4");
+    } else if (randomChatToUse == 5) {
+        Format(buffer, sizeof(buffer), "say %t", "BombPlant5");
+    }
+
+    FakeClientCommand(aliveCtPlayers[randomCtPlayerIndex], buffer);
 }
 
 public Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroadcast) {
