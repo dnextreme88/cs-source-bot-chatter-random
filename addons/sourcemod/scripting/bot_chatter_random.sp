@@ -114,7 +114,7 @@ public Action:TimerAnnounce(Handle:timer, any:client) {
 
 public Event_BombPlanted(Handle:event, const String:name[], bool:dontBroadcast) {
     decl String:buffer[512];
-    int aliveCtPlayersCount = 0;
+    int aliveCtBotsCount = 0;
 
     for (int i = 1; i <= MaxClients; i++) {
         if (IsClientInGame(i)) {
@@ -122,40 +122,37 @@ public Event_BombPlanted(Handle:event, const String:name[], bool:dontBroadcast) 
             GetClientName(i, playerName, 33);
 
             if (IsPlayerAlive(i) && GetClientTeam(i) == 3 && IsFakeClient(i)) { // Alive CT bots only
-                aliveCtPlayers[aliveCtPlayersCount] = i;
-                aliveCtPlayersCount++;
+                aliveCtPlayers[aliveCtBotsCount] = i;
+                aliveCtBotsCount++;
             }
         }
     }
 
-    int aliveCtPlayersSizeUsingIndex = aliveCtPlayersCount - 1;
+    if (aliveCtBotsCount > 0) {
+        int aliveCtPlayersSizeUsingIndex = aliveCtBotsCount - 1;
 
-    // RANDOMIZER
-    new randomChatToUse = GetRandomInt(1, 5);
-    new randomCtPlayerIndex = GetRandomInt(0, aliveCtPlayersSizeUsingIndex);
+        // RANDOMIZER
+        new randomChatToUse = GetRandomInt(1, 5);
+        new randomCtPlayerIndex = GetRandomInt(0, aliveCtPlayersSizeUsingIndex);
 
-    if (randomChatToUse == 1) {
-        Format(buffer, sizeof(buffer), "say %t", "BombPlant1");
-    } else if (randomChatToUse == 2) {
-        // A random CT teammate
-        new randomCtPlayerIndexTeammate = GetRandomInt(0, aliveCtPlayersSizeUsingIndex);
-        new String:secondPlayerName[64];
-        GetClientName(aliveCtPlayers[randomCtPlayerIndexTeammate], secondPlayerName, 33);
+        // REF: https://forums.alliedmods.net/showpost.php?p=2795817&postcount=3
+        FormatEx(buffer, sizeof(buffer), "BombPlant%i", randomChatToUse);
 
-        if (randomCtPlayerIndex == randomCtPlayerIndexTeammate) {
-            Format(buffer, sizeof(buffer), "say %t", "BombPlant2", secondPlayerName);
+        if (randomChatToUse == 1) {
+            // A random CT teammate
+            new randomCtPlayerIndexTeammate = GetRandomInt(0, aliveCtPlayersSizeUsingIndex);
+            new String:secondPlayerName[64];
+            GetClientName(aliveCtPlayers[randomCtPlayerIndexTeammate], secondPlayerName, 33);
+
+            if (randomCtPlayerIndex == randomCtPlayerIndexTeammate) {
+                FakeClientCommand(aliveCtPlayers[randomCtPlayerIndex], "say %t", buffer, BOMBPLANT_MYSELF); // Let him talk to himself, for his own motivation
+            } else {
+                FakeClientCommand(aliveCtPlayers[randomCtPlayerIndex], "say %t", buffer, secondPlayerName); 
+            }
         } else {
-            Format(buffer, sizeof(buffer), "say %t", "BombPlant2", BOMBPLANT_MYSELF); // Let him talk to himself, for his own motivation
+            FakeClientCommand(aliveCtPlayers[randomCtPlayerIndex], "say %t", buffer);
         }
-    } else if (randomChatToUse == 3) {
-        Format(buffer, sizeof(buffer), "say %t", "BombPlant3");
-    } else if (randomChatToUse == 4) {
-        Format(buffer, sizeof(buffer), "say %t", "BombPlant4");
-    } else if (randomChatToUse == 5) {
-        Format(buffer, sizeof(buffer), "say %t", "BombPlant5");
     }
-
-    FakeClientCommand(aliveCtPlayers[randomCtPlayerIndex], buffer);
 }
 
 public Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroadcast) {

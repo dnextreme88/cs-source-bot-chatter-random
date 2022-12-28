@@ -74,12 +74,12 @@
 	// Bomb planted chat
 	"BombPlant1"
 	{
-		"en"		"Jeeesuzzz Christ, not again!"
+		"#format"	"{1:s}"
+		"en"		"C'mon {1}, let's search the bomb!"
 	}
 	"BombPlant2"
 	{
-		"#format"	"{1:s}"
-		"en"		"C'mon {1}, let's search the bomb!"
+		"en"		"Jeeesuzzz Christ, not again!"
 	}
 	"BombPlant3"
 	{
