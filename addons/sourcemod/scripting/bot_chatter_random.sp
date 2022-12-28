@@ -33,7 +33,7 @@ public Event_RoundStart(Handle:event, const String:name[], bool:dontBroadcast) {
 public Action:TimerAnnounce(Handle:timer, any:client) {
     if (IsClientInGame(client)) {
         // RANDOMIZER
-        new randomChatToUse = GetRandomInt(0, 14);
+        new randomChatToUse = GetRandomInt(1, 14);
         new randomNum = GetRandomInt(0, 90);
 
         // PrintToServer("randomChatToUse (from 0 - 14): %d", randomChatToUse);
@@ -65,49 +65,9 @@ public Action:TimerAnnounce(Handle:timer, any:client) {
         decl String:buffer[512];
 
         if (IsClientInGame(client) && IsFakeClient(client) && !IsPlayerAlive(client) && randomNum == 90) {
-            if (randomChatToUse == 1) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead1");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 2) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead2");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 3) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead3");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 4) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead4");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 5) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead5");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 6) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead6");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 7) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead7");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 8) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead8");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 9) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead9");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 10) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead10");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 11) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead11");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 12) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead12");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 13) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead13");
-                FakeClientCommand(client, buffer);
-            } else if (randomChatToUse == 14) {
-                Format(buffer, sizeof(buffer), "say %t", "Dead14");
-                FakeClientCommand(client, buffer);
-            }
+            // REF: https://forums.alliedmods.net/showpost.php?p=2795817&postcount=3
+            FormatEx(buffer, sizeof(buffer), "Dead%i", randomChatToUse);
+            FakeClientCommand(client, "say %t", buffer);
         }
     }
 }
@@ -171,7 +131,7 @@ public Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroadcast) 
     GetClientName(victimClient, victimName, 33);
 
     // RANDOMIZER
-    new randomChatToUse = GetRandomInt(0, 14);
+    new randomChatToUse = GetRandomInt(1, 14);
     new randomNum = GetRandomInt(0, 90);
 
     for (int i = 1; i <= MaxClients; i++) {
@@ -179,37 +139,9 @@ public Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroadcast) 
         CreateTimer(10.0, TimerAnnounce, victimClient);
 
         if (victimTeam != attackerTeam && randomNum >= 85 && IsFakeClient(attackerClient)) {
-            if (randomChatToUse == 1) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed1", victimName);
-            } else if (randomChatToUse == 2) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed2", victimName);
-            } else if (randomChatToUse == 3) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed3", victimName);
-            } else if (randomChatToUse == 4) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed4", victimName);
-            } else if (randomChatToUse == 5) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed5", victimName);
-            } else if (randomChatToUse == 6) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed6", victimName);
-            } else if (randomChatToUse == 7) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed7", victimName);
-            } else if (randomChatToUse == 8) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed8", victimName);
-            } else if (randomChatToUse == 9) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed9", victimName);
-            } else if (randomChatToUse == 10) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed10", victimName);
-            } else if (randomChatToUse == 11) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed11", victimName);
-            } else if (randomChatToUse == 12) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed12", victimName);
-            } else if (randomChatToUse == 13) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed13", victimName);
-            } else if (randomChatToUse == 14) {
-                Format(buffer, sizeof(buffer), "say %t", "Killed14", victimName);
-            }
-
-            FakeClientCommand(attackerClient, buffer);
+            // REF: https://forums.alliedmods.net/showpost.php?p=2795817&postcount=3
+            FormatEx(buffer, sizeof(buffer), "Killed%i", randomChatToUse);
+            FakeClientCommand(attackerClient, "say %t", buffer, victimName);
         }
     }
 }
