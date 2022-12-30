@@ -25,6 +25,10 @@ public OnPluginStart() {
     HookEvent("bomb_planted", Event_BombPlanted);
 }
 
+public OnMapStart() {
+    aliveCtPlayers[0] = EOS;
+}
+
 public Event_RoundStart(Handle:event, const String:name[], bool:dontBroadcast) {
     aliveCtPlayers[0] = EOS;
 }
