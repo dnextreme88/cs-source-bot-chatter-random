@@ -150,4 +150,65 @@
 	{
 		"en"		"I really should go to bed now."
 	}
+	// Dead chat where {1} is the player with the most kills / frags at the start of the round
+	"Dead15"
+	{
+		"#format"	"{1:s}"
+		"en"		"I can't believe {1} isn't cheating!"
+	}
+	"Dead16"
+	{
+		"#format"	"{1:s}"
+		"en"		"Woah! {1} has nice stats!"
+	}
+	"Dead17"
+	{
+		"#format"	"{1:s}"
+		"en"		"HEY {1}, YOU DAMN CHEATER!"
+	}
+	"Dead18"
+	{
+		"#format"	"{1:s}"
+		"en"		"I suspect that {1} is cheating."
+	}
+	"Dead19"
+	{
+		"#format"	"{1:s}"
+		"en"		"I'm sure that {1} used an Aimbot!"
+	}
+	"Dead20"
+	{
+		"#format"	"{1:s}"
+		"en"		"Would you give me your Headshot Script, {1}?"
+	}
+	"Dead21"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1}, are you cheating?"
+	}
+	"Dead22"
+	{
+		"#format"	"{1:s}"
+		"en"		"Aimbots are cool, shut up {1}!"
+	}
+	"Dead23"
+	{
+		"#format"	"{1:s}"
+		"en"		"Even PunkBuster fails to detect {1}..."
+	}
+	"Dead24"
+	{
+		"#format"	"{1:s}"
+		"en"		"You can't be sure nowadays if someones's good at playing or cheating like {1}."
+	}
+	"Dead25"
+	{
+		"#format"	"{1:s}"
+		"en"		"Wallhacks are evil tools of the devil, {1}. ;)"
+	}
+	"Dead26"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1}, Did you know that even buying scripts are considered cheating?"
+	}
 }

@@ -94,9 +94,7 @@ Please vote for a mapchange !!!
 Did one of the Bots get stuck already ?
 Boooooom !!! *lol*
 Insane in the membrane, hehe!
-I'm sure that Guy used an Aimbot !
 Are there Bots in this Game ?
-Would you give me your Headshot Script ?
 Next Round we should stick together.
 What are Clans all about ? I don't get it
 Do you know Jumbot ? It really kicks Ass!
@@ -109,17 +107,32 @@ Why did they include the vehicles in CS ?
 Visit http://www.geocities.com/countfloyd_1999/
 # -- CHATS WITH PLACEHOLDER BELOW
 %t GO,GO,GO!!
-I can't believe %f isn't cheating
 %r in the round and I'm already spectating :(
 %r and %t is still alive! Something must be wrong...
 Will they stop camping now ? Only %r left !!
 Still %r in this round
 I bet %t won't make it through the round
 No %m today, please !
-Woah %f has nice stats !!
 I really hate %m :(
 LOL! Look at %t !
+
+[DEADCHAT - MOST FRAGS]
+I can't believe %f isn't cheating!
+Woah %f has nice stats!
 HEY %f YOU DAMN CHEATER!
+# -- MODIFIED
+I'm sure that %f used an Aimbot!
+Would you give me your Headshot Script, %f?
+# -- FROM @KEY "CHEAT"
+I suspect that %f is cheating.
+# -- ALL FROM @KEY "AIMBOT", "WALLHACK"
+%f, are you cheating?
+Even PunkBuster fails to detect %f...
+You can't be sure nowadays if someones's good at playing or cheating like %f.
+Aimbots are cool, shut up %f!
+Wallhacks are evil tools of the devil, %f. ;)
+# -- FROM @KEY "SCRIPT"
+%f, Did you know that even buying scripts are considered cheating?
 
 // TODO
 // FOR TEAMKILL CHAT - feature
@@ -144,13 +157,6 @@ I had to reload and he shot me in the head!
 %s, things are always repeating - aren't they?
 And I'm sure it wasn't the last time...
 That's the way things go, hey...
-
-@KEY "AIMBOT", "WALLHACK"
-%s, are you cheating ?
-Even PunkBuster fails to detect some of them...
-You can't be sure nowadays if someones's good at playing or cheats
-Aimbots are cool, shut up %s!
-Wallhacks are evil tools of the devil ;)
 
 @KEY " ALWAYS "
 That's not always, %s!
@@ -188,7 +194,6 @@ Yes, good 'ole Camper-Strike...
 
 @KEY "CHEAT"
 Those damn cheaters are ruining the entire game!
-I suspect that %f is cheating
 I hate cheaters!
 Cheating sucks!
 Why are so many people cheating?
@@ -304,7 +309,6 @@ Once lovingly called 'the wallhuggers'
 @KEY "SCRIPT"
 Scripts are for losers
 %s, you prolly don't know how to bind keys ?
-Did you know that even buying scripts are considered cheating ?
 
 @KEY "SERVER"
 I'm always on this Server

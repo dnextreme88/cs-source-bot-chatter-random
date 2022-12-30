@@ -4,10 +4,14 @@
 
 #pragma semicolon 1
 
-#define PLUGIN_VERSION	"1.0"
+#define PLUGIN_VERSION	    "1.3"
 #define BOMBPLANT_MYSELF    "self"
 
 new aliveCtPlayers[17];
+
+new hitsTakenList[MAXPLAYERS + 1]; // Store hits made by players into an array
+new String:playerNameWithMostKills[34];
+int playerIndexWithMostKills = 0;
 
 public Plugin:myinfo = {
     name = "Bot Chatter",
@@ -21,33 +25,55 @@ public OnPluginStart() {
     LoadTranslations("bot_chatter_random.phrases");
 
     HookEvent("round_start", Event_RoundStart);
-    HookEvent("player_death", Event_PlayerDeath);
     HookEvent("bomb_planted", Event_BombPlanted);
+    HookEvent("player_hurt", Event_PlayerHurt);
+    HookEvent("player_death", Event_PlayerDeath);
 }
 
 public OnMapStart() {
     aliveCtPlayers[0] = EOS;
+
+    for (new i = 1; i <= MaxClients; i++) {
+        hitsTakenList[i] = 0;
+    }
+
+    playerIndexWithMostKills = 0;
 }
 
 public Event_RoundStart(Handle:event, const String:name[], bool:dontBroadcast) {
     aliveCtPlayers[0] = EOS;
+
+    GetPlayerMostFrags();
+
+    for (new i = 1; i <= MaxClients; i++) {
+        hitsTakenList[i] = 0;
+    }
 }
 
 // Thanks to PC Gamer for this snippet (https://forums.alliedmods.net/showpost.php?p=2796195&postcount=2)
 public Action DeadChatTimer(Handle timer, any client) {
     if (IsClientInGame(client) && !IsPlayerAlive(client)) {
         // RANDOMIZER
-        int randomChatToUse = GetRandomInt(1, 14);
+        int randomChatToUse = GetRandomInt(1, 26);
         int randomNum = GetRandomInt(0, 90);
-
-        // PrintToServer("LOG: randomChatToUse (from 1 - 14): %d", randomChatToUse);
-        // PrintToServer("LOG: randomNum (if greater than 84, BOTS say something to chat based on value of randomChatToUse) %d", randomNum);
 
         if (randomNum > 84){
             char buffer[512];
+
             // REF: https://forums.alliedmods.net/showpost.php?p=2795817&postcount=3
             FormatEx(buffer, sizeof(buffer), "Dead%i", randomChatToUse);
-            FakeClientCommand(client, "say %t", buffer);
+
+            // PrintToServer("==== LOG: randomChatToUse (from 1 - 26): %d", randomChatToUse);
+            // PrintToServer("==== LOG: randomNum (if greater than 84, BOTS say something to chat based on value of randomChatToUse) %d", randomNum);
+            // PrintToServer("==== LOG: playerNameWithMostKills: %s", playerNameWithMostKills);
+
+            if (randomChatToUse >= 15 && randomChatToUse <= 26) { // Chats referring to player with most frags (upon start of round only)
+                if (!StrEqual(playerNameWithMostKills, "")) { // Only works for round 2 and above
+                    FakeClientCommand(client, "say %t", buffer, playerNameWithMostKills);
+                }
+            } else {
+                FakeClientCommand(client, "say %t", buffer);
+            }
         }
 
         return Plugin_Continue;
@@ -99,6 +125,16 @@ public Event_BombPlanted(Handle:event, const String:name[], bool:dontBroadcast) 
     }
 }
 
+public Event_PlayerHurt(Handle:event, const String:name[], bool:dontBroadcast) {
+    new damageDealt = GetEventInt(event, "dmg_health");
+
+    new attackerId = GetEventInt(event, "attacker");
+    new attackerClient = GetClientOfUserId(attackerId);
+
+    // Used to determine player with the most frags at the start of each round to be used by the dead chats
+    hitsTakenList[attackerClient] += damageDealt;
+}
+
 public Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroadcast) {
     new victimId = GetEventInt(event, "userid");
     new victimClient = GetClientOfUserId(victimId);
@@ -129,6 +165,47 @@ public Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroadcast) 
             // REF: https://forums.alliedmods.net/showpost.php?p=2795817&postcount=3
             FormatEx(buffer, sizeof(buffer), "Killed%i", randomChatToUse);
             FakeClientCommand(attackerClient, "say %t", buffer, victimName);
+        }
+    }
+}
+
+void GetPlayerMostFrags() {
+    int kills = 0;
+    int playerDeathsCurrentMostKills = 0;
+    int playerDeathsCurrentIteration = 0;
+    int mostKillsCount = 0;
+
+    // Finding out who has the most frags / kills
+    for (new i = 1; i <= MaxClients; i++) {
+        kills = 0;
+
+        if (IsClientInGame(i)) {
+            kills = GetClientFrags(i);
+
+            if (kills > 0 && kills > mostKillsCount) {
+                mostKillsCount = kills;
+                playerIndexWithMostKills = i;
+                GetClientName(i, playerNameWithMostKills, 33);
+            } else if (kills > 0 && kills >= mostKillsCount) { // Tied with kills
+                playerDeathsCurrentMostKills = GetClientDeaths(playerIndexWithMostKills); // Player with the current most kills
+                playerDeathsCurrentIteration = GetClientDeaths(i); // Player being compared
+
+                new String:playerNameTiedWithMostKills[34];
+                GetClientName(i, playerNameTiedWithMostKills, 33);
+
+                // In case of a tie, check if current iteration has lesser deaths first.
+                // If not, we check if it dealt more damage than the current holder on the previous round
+                if (playerDeathsCurrentIteration < playerDeathsCurrentMostKills) {
+                    playerIndexWithMostKills = i;
+                    GetClientName(i, playerNameWithMostKills, 33); // Overwrite as new player with most kills
+                    continue;
+                }
+
+                if (hitsTakenList[i] > hitsTakenList[playerIndexWithMostKills]) {
+                    playerIndexWithMostKills = i;
+                    GetClientName(i, playerNameWithMostKills, 33); // Overwrite as new player with most kills
+                }
+            }
         }
     }
 }
