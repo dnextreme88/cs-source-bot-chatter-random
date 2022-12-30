@@ -96,7 +96,7 @@
 	// Dead chat
 	"Dead1"
 	{
-		"en"		"It makes me sick to look at those Fools!"
+		"en"		"Look at those idiots!"
 	}
 	"Dead2"
 	{
@@ -120,7 +120,7 @@
 	}
 	"Dead7"
 	{
-		"en"		"Why does everyone keep trying to hurt me :)"
+		"en"		"I'm so tired today..."
 	}
 	"Dead8"
 	{
@@ -148,6 +148,6 @@
 	}
 	"Dead14"
 	{
-		"en"		"Stupid Bots!"
+		"en"		"I really should go to bed now."
 	}
 }
