@@ -134,13 +134,15 @@ Wallhacks are evil tools of the devil, %f. ;)
 # -- FROM @KEY "SCRIPT"
 %f, Did you know that even buying scripts are considered cheating?
 
-// TODO
-// FOR TEAMKILL CHAT - feature
+[DEADCHAT - TEAMKILLS]
 Stupid Bots!
-It makes me sick to look at those Fools
+It makes me sick to look at those Fools!
 Why does everyone keep trying to hurt me :)
 Fuck all those Teamkillers!!!
 I had to reload and he shot me in the head!
+# -- FROM @KEY "TEAMKILL", " TK "
+Teamkillers should be banned from this server.
+Where's the Admin? Teamkillers should be taken care of...
 
 # Start of the "dynamic" replies from here
 # After each @KEY Tag you need to specify the
@@ -323,11 +325,9 @@ I'm sorry, too!
 You don't know how sorry you will be for doing that...
 
 @KEY "TEAMKILL", " TK "
-Teamkillers should be banned from this server.
 Who's the teamkiller %s ?
 I like stabbing my teammates, MWUHAHA!!
 Did %t kill you ? He often does!
-Where's the Admin ? He should take care of it...
 %s just sit out %r and pay him back!
 
 @KEY "TIRED", "SLEEP"

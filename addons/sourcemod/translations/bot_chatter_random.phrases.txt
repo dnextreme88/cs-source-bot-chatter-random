@@ -211,4 +211,33 @@
 		"#format"	"{1:s}"
 		"en"		"{1}, Did you know that even buying scripts are considered cheating?"
 	}
+	// Teamkill chat
+	"Teamkill1"
+	{
+		"en"		"Stupid Bots!"
+	}
+	"Teamkill2"
+	{
+		"en"		"It makes me sick to look at those Fools!"
+	}
+	"Teamkill3"
+	{
+		"en"		"Why does everyone keep trying to hurt me :)"
+	}
+	"Teamkill4"
+	{
+		"en"		"Fuck all those Teamkillers!!!"
+	}
+	"Teamkill5"
+	{
+		"en"		"I had to reload and he shot me in the head!"
+	}
+	"Teamkill6"
+	{
+		"en"		"Teamkillers should be banned from this server."
+	}
+	"Teamkill7"
+	{
+		"en"		"Where's the Admin? Teamkillers should be taken care of..."
+	}
 }

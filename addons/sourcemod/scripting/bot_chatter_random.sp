@@ -82,6 +82,26 @@ public Action DeadChatTimer(Handle timer, any client) {
     }
 }
 
+public Action TeamkillChatTimer(Handle timer, any client) {
+    if (IsClientInGame(client) && !IsPlayerAlive(client)) {
+        // RANDOMIZER
+        int randomChatToUse = GetRandomInt(1, 7);
+        int randomNum = GetRandomInt(0, 90);
+
+        if (randomNum >= 70){
+            char buffer[512];
+
+            // REF: https://forums.alliedmods.net/showpost.php?p=2795817&postcount=3
+            FormatEx(buffer, sizeof(buffer), "Teamkill%i", randomChatToUse);
+            FakeClientCommand(client, "say %t", buffer);
+        }
+
+        return Plugin_Continue;
+    } else {
+        return Plugin_Stop;
+    }
+}
+
 public Event_BombPlanted(Handle:event, const String:name[], bool:dontBroadcast) {
     decl String:buffer[512];
     int aliveCtBotsCount = 0;
@@ -165,6 +185,8 @@ public Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroadcast) 
             // REF: https://forums.alliedmods.net/showpost.php?p=2795817&postcount=3
             FormatEx(buffer, sizeof(buffer), "Killed%i", randomChatToUse);
             FakeClientCommand(attackerClient, "say %t", buffer, victimName);
+        } else if (victimTeam == attackerTeam && randomNum >= 70 && IsFakeClient(victimClient)) {
+            CreateTimer(5.0, TeamkillChatTimer, victimClient, TIMER_FLAG_NO_MAPCHANGE);
         }
     }
 }
