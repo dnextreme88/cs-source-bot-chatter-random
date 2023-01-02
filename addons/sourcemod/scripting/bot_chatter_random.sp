@@ -54,7 +54,7 @@ public Event_RoundStart(Handle:event, const String:name[], bool:dontBroadcast) {
 public Action DeadChatTimer(Handle timer, any client) {
     if (IsClientInGame(client) && !IsPlayerAlive(client)) {
         // RANDOMIZER
-        int randomChatToUse = GetRandomInt(1, 26);
+        int randomChatToUse = GetRandomInt(1, 42);
         int randomNum = GetRandomInt(0, 90);
 
         if (randomNum > 84){
@@ -63,11 +63,11 @@ public Action DeadChatTimer(Handle timer, any client) {
             // REF: https://forums.alliedmods.net/showpost.php?p=2795817&postcount=3
             FormatEx(buffer, sizeof(buffer), "Dead%i", randomChatToUse);
 
-            // PrintToServer("==== LOG: randomChatToUse (from 1 - 26): %d", randomChatToUse);
+            // PrintToServer("==== LOG: randomChatToUse (from 1 - 42): %d", randomChatToUse);
             // PrintToServer("==== LOG: randomNum (if greater than 84, BOTS say something to chat based on value of randomChatToUse) %d", randomNum);
             // PrintToServer("==== LOG: playerNameWithMostKills: %s", playerNameWithMostKills);
 
-            if (randomChatToUse >= 15 && randomChatToUse <= 26) { // Chats referring to player with most frags (upon start of round only)
+            if (randomChatToUse >= 31 && randomChatToUse <= 42) { // Chats referring to player with most frags (upon start of round only)
                 if (!StrEqual(playerNameWithMostKills, "")) { // Only works for round 2 and above
                     FakeClientCommand(client, "say %t", buffer, playerNameWithMostKills);
                 }

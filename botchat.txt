@@ -72,7 +72,7 @@ You need to do some practicing, %v!
 # Chat Messages when dead and bored
 # !!Minimum Number is 9!!
 #
-[DEADCHAT]
+[DEADCHAT - RANDOM]
 Look at those idiots !
 It's time for a mapchange, isn't it?
 I'm so booored!
@@ -87,34 +87,22 @@ I'm having a bad day.
 I'm better at Quake 3, that's for sure!
 Botman must be such a cool guy...
 I really should go to bed now.
-# BELOW LINES NOT IMPLEMENTED
 I usually don't play that bad !
 Sniping is all they can do.
 Please vote for a mapchange !!!
 Did one of the Bots get stuck already ?
 Boooooom !!! *lol*
 Insane in the membrane, hehe!
-Are there Bots in this Game ?
-Next Round we should stick together.
-What are Clans all about ? I don't get it
-Do you know Jumbot ? It really kicks Ass!
+Are there Bots in this game?
+Next round, we should stick together.
+Do you want to play or chat all the time?
+Do you know Jumbot? It really kicks ass!
 If Botman is cool, what is TheFatal then ?
-Fucking lagged !!
+Fucking lagged!!!
 IMHO NNBot is much better than RealBot.
 Too bad Android Bot is updated so slowly.
 I'm off for a cigarette break...
 Why did they include the vehicles in CS ?
-Visit http://www.geocities.com/countfloyd_1999/
-# -- CHATS WITH PLACEHOLDER BELOW
-%t GO,GO,GO!!
-%r in the round and I'm already spectating :(
-%r and %t is still alive! Something must be wrong...
-Will they stop camping now ? Only %r left !!
-Still %r in this round
-I bet %t won't make it through the round
-No %m today, please !
-I really hate %m :(
-LOL! Look at %t !
 
 [DEADCHAT - MOST FRAGS]
 I can't believe %f isn't cheating!
@@ -369,10 +357,20 @@ Wazzzzuuuuuuup?
 I´m so booooored...
 It's damn slow today...
 OMG you're weird!
-Do you want to play or chat all the time ?
 Certainly.
 Huh? WTF ?
+What are Clans all about ? I don't get it
+Visit http://www.geocities.com/countfloyd_1999/
 # -- CHATS WITH PLACEHOLDER BELOW
+%t GO,GO,GO!!
+%r in the round and I'm already spectating :(
+%r and %t is still alive! Something must be wrong...
+Will they stop camping now ? Only %r left !!
+Still %r in this round
+I bet %t won't make it through the round
+No %m today, please !
+I really hate %m :(
+LOL! Look at %t !
 What did you say, %s?
 Concentrate on the game, %s!
 Chatting with you %s is so great!
