@@ -72,7 +72,7 @@ You need to do some practicing, %v!
 # Chat Messages when dead and bored
 # !!Minimum Number is 9!!
 #
-[DEADCHAT]
+[DEADCHAT - RANDOM]
 Look at those idiots !
 It's time for a mapchange, isn't it?
 I'm so booored!
@@ -87,47 +87,50 @@ I'm having a bad day.
 I'm better at Quake 3, that's for sure!
 Botman must be such a cool guy...
 I really should go to bed now.
-# BELOW LINES NOT IMPLEMENTED
 I usually don't play that bad !
 Sniping is all they can do.
 Please vote for a mapchange !!!
 Did one of the Bots get stuck already ?
 Boooooom !!! *lol*
 Insane in the membrane, hehe!
-I'm sure that Guy used an Aimbot !
-Are there Bots in this Game ?
-Would you give me your Headshot Script ?
-Next Round we should stick together.
-What are Clans all about ? I don't get it
-Do you know Jumbot ? It really kicks Ass!
+Are there Bots in this game?
+Next round, we should stick together.
+Do you want to play or chat all the time?
+Do you know Jumbot? It really kicks ass!
 If Botman is cool, what is TheFatal then ?
-Fucking lagged !!
+Fucking lagged!!!
 IMHO NNBot is much better than RealBot.
 Too bad Android Bot is updated so slowly.
 I'm off for a cigarette break...
 Why did they include the vehicles in CS ?
-Visit http://www.geocities.com/countfloyd_1999/
-# -- CHATS WITH PLACEHOLDER BELOW
-%t GO,GO,GO!!
-I can't believe %f isn't cheating
-%r in the round and I'm already spectating :(
-%r and %t is still alive! Something must be wrong...
-Will they stop camping now ? Only %r left !!
-Still %r in this round
-I bet %t won't make it through the round
-No %m today, please !
-Woah %f has nice stats !!
-I really hate %m :(
-LOL! Look at %t !
-HEY %f YOU DAMN CHEATER!
 
-// TODO
-// FOR TEAMKILL CHAT - feature
+[DEADCHAT - MOST FRAGS]
+I can't believe %f isn't cheating!
+Woah %f has nice stats!
+HEY %f YOU DAMN CHEATER!
+# -- MODIFIED
+I'm sure that %f used an Aimbot!
+Would you give me your Headshot Script, %f?
+# -- FROM @KEY "CHEAT"
+I suspect that %f is cheating.
+# -- ALL FROM @KEY "AIMBOT", "WALLHACK"
+%f, are you cheating?
+Even PunkBuster fails to detect %f...
+You can't be sure nowadays if someones's good at playing or cheating like %f.
+Aimbots are cool, shut up %f!
+Wallhacks are evil tools of the devil, %f. ;)
+# -- FROM @KEY "SCRIPT"
+%f, Did you know that even buying scripts are considered cheating?
+
+[DEADCHAT - TEAMKILLS]
 Stupid Bots!
-It makes me sick to look at those Fools
+It makes me sick to look at those Fools!
 Why does everyone keep trying to hurt me :)
 Fuck all those Teamkillers!!!
 I had to reload and he shot me in the head!
+# -- FROM @KEY "TEAMKILL", " TK "
+Teamkillers should be banned from this server.
+Where's the Admin? Teamkillers should be taken care of...
 
 # Start of the "dynamic" replies from here
 # After each @KEY Tag you need to specify the
@@ -144,13 +147,6 @@ I had to reload and he shot me in the head!
 %s, things are always repeating - aren't they?
 And I'm sure it wasn't the last time...
 That's the way things go, hey...
-
-@KEY "AIMBOT", "WALLHACK"
-%s, are you cheating ?
-Even PunkBuster fails to detect some of them...
-You can't be sure nowadays if someones's good at playing or cheats
-Aimbots are cool, shut up %s!
-Wallhacks are evil tools of the devil ;)
 
 @KEY " ALWAYS "
 That's not always, %s!
@@ -188,7 +184,6 @@ Yes, good 'ole Camper-Strike...
 
 @KEY "CHEAT"
 Those damn cheaters are ruining the entire game!
-I suspect that %f is cheating
 I hate cheaters!
 Cheating sucks!
 Why are so many people cheating?
@@ -304,7 +299,6 @@ Once lovingly called 'the wallhuggers'
 @KEY "SCRIPT"
 Scripts are for losers
 %s, you prolly don't know how to bind keys ?
-Did you know that even buying scripts are considered cheating ?
 
 @KEY "SERVER"
 I'm always on this Server
@@ -319,11 +313,9 @@ I'm sorry, too!
 You don't know how sorry you will be for doing that...
 
 @KEY "TEAMKILL", " TK "
-Teamkillers should be banned from this server.
 Who's the teamkiller %s ?
 I like stabbing my teammates, MWUHAHA!!
 Did %t kill you ? He often does!
-Where's the Admin ? He should take care of it...
 %s just sit out %r and pay him back!
 
 @KEY "TIRED", "SLEEP"
@@ -365,10 +357,20 @@ Wazzzzuuuuuuup?
 I´m so booooored...
 It's damn slow today...
 OMG you're weird!
-Do you want to play or chat all the time ?
 Certainly.
 Huh? WTF ?
+What are Clans all about ? I don't get it
+Visit http://www.geocities.com/countfloyd_1999/
 # -- CHATS WITH PLACEHOLDER BELOW
+%t GO,GO,GO!!
+%r in the round and I'm already spectating :(
+%r and %t is still alive! Something must be wrong...
+Will they stop camping now ? Only %r left !!
+Still %r in this round
+I bet %t won't make it through the round
+No %m today, please !
+I really hate %m :(
+LOL! Look at %t !
 What did you say, %s?
 Concentrate on the game, %s!
 Chatting with you %s is so great!

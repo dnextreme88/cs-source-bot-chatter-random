@@ -150,4 +150,158 @@
 	{
 		"en"		"I really should go to bed now."
 	}
+	"Dead15"
+	{
+		"en"		"I usually don't play that bad!"
+	}
+	"Dead16"
+	{
+		"en"		"Sniping is all they can do."
+	}
+	"Dead17"
+	{
+		"en"		"Please vote for a mapchange!!!"
+	}
+	"Dead18"
+	{
+		"en"		"Did one of the Bots get stuck already?"
+	}
+	"Dead19"
+	{
+		"en"		"Boooooom!!! *lol*"
+	}
+	"Dead20"
+	{
+		"en"		"Insane in the membrane, hehe!"
+	}
+	"Dead21"
+	{
+		"en"		"Are there Bots in this game?"
+	}
+	"Dead22"
+	{
+		"en"		"Next round, we should stick together."
+	}
+	"Dead23"
+	{
+		"en"		"Do you want to play or chat all the time?"
+	}
+	"Dead24"
+	{
+		"en"		"Do you know Jumbot? It really kicks ass!"
+	}
+	"Dead25"
+	{
+		"en"		"If Botman is cool, what is TheFatal then?"
+	}
+	"Dead26"
+	{
+		"en"		"Fucking lagged!!!"
+	}
+	"Dead27"
+	{
+		"en"		"IMHO NNBot is much better than RealBot."
+	}
+	"Dead28"
+	{
+		"en"		"Too bad Android Bot is updated so slowly."
+	}
+	"Dead29"
+	{
+		"en"		"I'm off for a cigarette break..."
+	}
+	"Dead30"
+	{
+		"en"		"Why did they include the vehicles in CS?"
+	}
+	// Dead chat where {1} is the player with the most kills / frags at the start of the round
+	"Dead31"
+	{
+		"#format"	"{1:s}"
+		"en"		"I can't believe {1} isn't cheating!"
+	}
+	"Dead32"
+	{
+		"#format"	"{1:s}"
+		"en"		"Woah! {1} has nice stats!"
+	}
+	"Dead33"
+	{
+		"#format"	"{1:s}"
+		"en"		"HEY {1}, YOU DAMN CHEATER!"
+	}
+	"Dead34"
+	{
+		"#format"	"{1:s}"
+		"en"		"I suspect that {1} is cheating."
+	}
+	"Dead35"
+	{
+		"#format"	"{1:s}"
+		"en"		"I'm sure that {1} used an Aimbot!"
+	}
+	"Dead36"
+	{
+		"#format"	"{1:s}"
+		"en"		"Would you give me your Headshot Script, {1}?"
+	}
+	"Dead37"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1}, are you cheating?"
+	}
+	"Dead38"
+	{
+		"#format"	"{1:s}"
+		"en"		"Aimbots are cool, shut up {1}!"
+	}
+	"Dead39"
+	{
+		"#format"	"{1:s}"
+		"en"		"Even PunkBuster fails to detect {1}..."
+	}
+	"Dead40"
+	{
+		"#format"	"{1:s}"
+		"en"		"You can't be sure nowadays if someones's good at playing or cheating like {1}."
+	}
+	"Dead41"
+	{
+		"#format"	"{1:s}"
+		"en"		"Wallhacks are evil tools of the devil, {1}. ;)"
+	}
+	"Dead42"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1}, Did you know that even buying scripts are considered cheating?"
+	}
+	// Teamkill chat
+	"Teamkill1"
+	{
+		"en"		"Stupid Bots!"
+	}
+	"Teamkill2"
+	{
+		"en"		"It makes me sick to look at those Fools!"
+	}
+	"Teamkill3"
+	{
+		"en"		"Why does everyone keep trying to hurt me :)"
+	}
+	"Teamkill4"
+	{
+		"en"		"Fuck all those Teamkillers!!!"
+	}
+	"Teamkill5"
+	{
+		"en"		"I had to reload and he shot me in the head!"
+	}
+	"Teamkill6"
+	{
+		"en"		"Teamkillers should be banned from this server."
+	}
+	"Teamkill7"
+	{
+		"en"		"Where's the Admin? Teamkillers should be taken care of..."
+	}
 }
